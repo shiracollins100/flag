@@ -2,17 +2,19 @@ import pygame
 from sys import exit # to close the game
 import consts
 import game_field
+import main
 
 
-def screen():
+def grass_screen():
     pygame.init()
     screen = pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
     pygame.screen.fill(consts.BACKGROUND_COLOR)
     pygame.display.set_caption("Flag Game")
     clock = pygame.time.Clock()
-    for i in game_field.grass_field_matrix:
-        for j in i:
-            if j==consts.GRASS_COLS:
+    for row in game_field.grass_field_matrix:
+        for col in row:
+            if col==consts.GRASS_COLS:
+                x, y = game_field.get_x_y_position(row, col)
 
 
 def night_screen():
@@ -23,14 +25,17 @@ def night_screen():
         pygame.draw.line(night_screen, consts.LINE_COLOR, (i,0), (i,1000), 5)
     for j in range(10,100, 30):
         pygame.draw.line(night_screen, consts.LINE_COLOR, (0, j), (1000,j), 5)
+        for row in game_field.grass_field_matrix:
+            for col in row:
+                if col == consts.GRASS_COLS:
+                    x, y = game_field.get_x_y_position(row, col)
 
 
-while True: # the game loop, when true game is running
+while main.state["is_playing"]: # the game loop, when true game is running
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
-
     pygame.display.update()
     clock.tick(60) # updates the changes on screen - moving soldier
 
