@@ -18,7 +18,7 @@ FLAG_HEIGHT=
 #מיקום הדגל
 FLAG_X=
 FLAG_Y=
-
+11
 
 BACKGROUND_COLOR = (0, 153, 0)
 LOSE_MESSAGE = "You Lost!"
