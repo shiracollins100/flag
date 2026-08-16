@@ -18,7 +18,10 @@ while True: # the game loop, when true game is running
     clock.tick(60) # updates the changes on screen - moving soldier
 
 
-
+def create_flag(flag_img):
+    flag = pygame.image.load(arrow_img)
+    sized_flag = pygame.transform.scale(flag, (
+        consts.FLAG_WIDTH, consts.FLAG_HEIGHT))
 
 
 
