@@ -14,6 +14,7 @@ state = { "is_playing" : True,
 }
 def main():
     pygame.init()
+    while state["is_playing"]:
 
 
 

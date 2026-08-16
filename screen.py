@@ -16,6 +16,14 @@ def grass_screen():
             if col==consts.GRASS_COLS:
                 x, y = game_field.get_x_y_position(row, col)
 
+    while main.state["is_playing"]:  # the game loop, when true game is running
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                exit()
+        pygame.display.update()
+        clock.tick(60)  # updates the changes on screen - moving soldier
+
 
 def night_screen():
     # pygame.draw.aalines(screen, NIGTH_COLOR, True, True)
@@ -31,13 +39,6 @@ def night_screen():
                     x, y = game_field.get_x_y_position(row, col)
 
 
-while main.state["is_playing"]: # the game loop, when true game is running
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            exit()
-    pygame.display.update()
-    clock.tick(60) # updates the changes on screen - moving soldier
 
 
 def create_flag(flag_img):
