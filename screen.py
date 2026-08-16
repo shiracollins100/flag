@@ -29,11 +29,17 @@ while True: # the game loop, when true game is running
 
 
 def create_flag(flag_img):
-    flag = pygame.image.load(arrow_img)
+    flag = pygame.image.load(flag_img)
     sized_flag = pygame.transform.scale(flag, (
         consts.FLAG_WIDTH, consts.FLAG_HEIGHT))
 
 
+def draw_lose_message():
+    draw_message(consts.LOSE_MESSAGE, consts.LOSE_FONT_SIZE,
+                 consts.LOSE_COLOR, consts.LOSE_LOCATION)
+def draw_win_message():
+    draw_message(consts.WIN_MESSAGE, consts.WIN_FONT_SIZE,
+                 consts.WIN_COLOR, consts.WIN_LOCATION)
 
 
 
