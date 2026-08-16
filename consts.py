@@ -3,11 +3,19 @@ WINDOW_HEIGHT=500
 ROW=25
 COL=50
 
-GRASS_IMG=grass.png
+COL_START_CENTER = 10
+COL_LENGTH = 20
+
+GRASS_IMG= "grass.png"
 GRASS_WIDTH=20
 GRASS_HEIGHT=60
 
-FLAG_IMG=flag.png
+EMPTY_COLS = "empty"
+GRASS_COLS = "grass"
+BOMB_COLS = "bomb"
+
+
+FLAG_IMG = "flag.png"
 FLAG_WIDTH=60
 FLAG_HEIGHT=80
 #מיקום הדגל

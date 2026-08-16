@@ -13,6 +13,8 @@ def create_grass_field_matrix():
                 grass_field_matrix[row][col] = consts.GRASS_COLS
     return grass_field_matrix
 
+grass_field_matrix = create_grass_field_matrix()
+
 
 # create xray screen
 def create_gray_field_matrix():
@@ -24,8 +26,15 @@ def create_gray_field_matrix():
                 xray_field_matrix[row][col] = consts.BOMB_COLS
     return xray_field_matrix
 
+xray_field_matrix = create_gray_field_matrix()
+
 def get_x_y_position(row, column):
-    pass
+    x = consts.COL_START_CENTER_X + column * consts.COL_LENGTH
+    y = consts.COL_START_CENTER_X + row * consts.COL_LENGTH
+    return (x, y)
+
+
+
 
 
 
