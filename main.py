@@ -14,7 +14,7 @@ state = { "is_playing" : True,
 }
 def main():
     pygame.init()
-
+    screen.draw_game()
 
 
 

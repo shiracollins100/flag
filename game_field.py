@@ -8,7 +8,7 @@ def create_grass_field_matrix():
     grass_field_matrix = [[[] for x in range(consts.COL)] for y in range(consts.ROW)]
     for row in range(consts.ROW):
         for col in range(consts.COL):
-            pos = randint(0, consts.EMPTY_COLS )
+            pos = randint(0, 20 )
             if pos == 0:
                 grass_field_matrix[row][col] = consts.GRASS_COLS
     return grass_field_matrix
@@ -21,7 +21,7 @@ def create_gray_field_matrix():
     xray_field_matrix = [[[] for x in range(consts.COL)] for y in range(consts.ROW)]
     for row in range(consts.ROW):
         for col in range(consts.COL):
-            pos = randint(0, consts.EMPTY_COLS )
+            pos = randint(0,20 )
             if pos == 0:
                 xray_field_matrix[row][col] = consts.BOMB_COLS
     return xray_field_matrix
