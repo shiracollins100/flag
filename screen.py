@@ -4,7 +4,7 @@ import consts
 
 
 pygame.init()
-screen = pygame.display.set_mode((consts.SCREEN_WIDTH, consts.SCREEN_HEIGHT))
+screen = pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
 pygame.display.set_caption("Flag Game")
 clock = pygame.time.Clock()
 
@@ -22,6 +22,9 @@ def create_flag(flag_img):
     flag = pygame.image.load(arrow_img)
     sized_flag = pygame.transform.scale(flag, (
         consts.FLAG_WIDTH, consts.FLAG_HEIGHT))
+
+
+
 
 
 
