@@ -5,8 +5,18 @@ import consts
 
 pygame.init()
 screen = pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
+pygame.screen.fill(consts.BACKGROUND_COLOR)
 pygame.display.set_caption("Flag Game")
 clock = pygame.time.Clock()
+
+def night_screen():
+    # pygame.draw.aalines(screen, NIGTH_COLOR, True, True)
+    night_screen= pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
+    pygame.night_screen.fill(consts.NIGHT_COLOR)
+    for i in range(10,100, 30):
+        pygame.draw.line(night_screen, consts.LINE_COLOR, (i,0), (i,1000), 5)
+    for j in range(10,100, 30):
+        pygame.draw.line(night_screen, consts.LINE_COLOR, (0, j), (1000,j), 5)
 
 while True: # the game loop, when true game is running
     for event in pygame.event.get():
