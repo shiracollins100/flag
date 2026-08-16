@@ -8,8 +8,9 @@ import main
 def grass_screen():
     pygame.init()
     screen = pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
-    pygame.screen.fill(consts.BACKGROUND_COLOR)
+    screen.fill(consts.BACKGROUND_COLOR)
     pygame.display.set_caption("Flag Game")
+    pygame.display.flip()
     clock = pygame.time.Clock()
     for row in game_field.grass_field_matrix:
         for col in row:
@@ -45,6 +46,10 @@ def create_flag(flag_img):
     flag = pygame.image.load(flag_img)
     sized_flag = pygame.transform.scale(flag, (
         consts.FLAG_WIDTH, consts.FLAG_HEIGHT))
+def draw_message(message, font_size, color, location):
+    font = pygame.font.SysFont(consts.FONT_NAME, font_size)
+    text_img = font.render(message, True, color)
+    grass_screen.blit(text_img, location)
 
 
 def draw_lose_message():
@@ -54,7 +59,8 @@ def draw_win_message():
     draw_message(consts.WIN_MESSAGE, consts.WIN_FONT_SIZE,
                  consts.WIN_COLOR, consts.WIN_LOCATION)
 
-
+def draw_game():
+    screen()
 
 
 

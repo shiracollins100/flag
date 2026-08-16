@@ -24,7 +24,7 @@ def create_night_field_matrix():
     night_field_matrix = create_matrix
     for row in range(consts.ROW):
         for col in range(consts.COL):
-            pos = randint(0, 3 )
+            pos = randint(0,20 )
             if pos == 0:
                 night_field_matrix[row][col] = consts.BOMB_COLS
     return night_field_matrix

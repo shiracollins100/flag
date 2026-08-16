@@ -16,6 +16,7 @@ def main():
     pygame.init()
     while state["is_playing"]:
 
+    screen.draw_game()
 
 
 
