@@ -5,8 +5,7 @@ def create_field_matrix():
     return field_matrix
 
 def get_x_y_position(row, column):
-    return (row * 50 , column
+    pass
 
-def get_y_position(row, column):
 
 
