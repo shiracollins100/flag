@@ -4,7 +4,7 @@ import consts
 
 
 pygame.init()
-screen = pygame.display.set_mode((consts.SCREEN_WIDTH, consts.SCREEN_HEIGHT))
+screen = pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
 pygame.display.set_caption("Flag Game")
 clock = pygame.time.Clock()
 
@@ -16,6 +16,9 @@ while True: # the game loop, when true game is running
 
     pygame.display.update()
     clock.tick(60) # updates the changes on screen - moving soldier
+
+
+
 
 
 
