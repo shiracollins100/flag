@@ -11,7 +11,7 @@ def move_in_direction(soldier_location, direction):
     soldier_location["center_y"] += direction[1]
 
 def draw_soldier():
-
+    pass
 
 
 
