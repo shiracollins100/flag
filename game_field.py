@@ -5,14 +5,12 @@ from random import randint
 def create_matrix():
     return [[[consts.EMPTY_COLS] for x in range(consts.COL)] for y in range(consts.ROW)]
 
-
-
 # create grass screen
 def create_grass_field_matrix():
     grass_field_matrix = create_matrix()
     for row in range(consts.ROW):
         for col in range(consts.COL):
-            pos = randint(0, 3 )
+            pos = randint(0, 20)
             if pos == 0:
                 grass_field_matrix[row][col] = consts.GRASS_COLS
     return grass_field_matrix
@@ -36,9 +34,6 @@ def get_x_y_position(row, column):
     x = consts.COL_START_CENTER + column * consts.COL_LENGTH
     y = consts.COL_START_CENTER + row * consts.COL_LENGTH
     return x, y
-
-
-
 
 
 def is_valid_position():

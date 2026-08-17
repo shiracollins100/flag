@@ -13,19 +13,20 @@ state = { "is_playing" : True,
 }
 def main():
     clock = pygame.time.Clock()
-    screen.grass_screen(game_field.grass_field_matrix)
+    #screen.grass_screen(game_field.grass_field_matrix)
+    game_field.night_field_matrix=game_field.night_field_matrix
+    screen.night_screen(game_field.night_field_matrix)
     while state["is_playing"]:
         clock.tick(consts.GAME_SPEED)
-
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 state["is_playing"] = False
 
     pygame.quit()
 
-
-if __name__ == "__main__":
-    main()
+main()
+'''if __name__ == "__main__":
+    main()'''
 
 
 

@@ -3,7 +3,7 @@ from sys import exit # to close the game
 import consts
 import game_field
 import main
-
+import soldier
 
 def grass_screen(grass_field_matrix):
     pygame.init()
@@ -11,13 +11,13 @@ def grass_screen(grass_field_matrix):
     screen.fill(consts.BACKGROUND_COLOR)
     draw_object_on_screen(grass_field_matrix, consts.GRASS_IMG,
                           consts.GRASS_WIDTH, consts.GRASS_HEIGHT, screen)
+    #draw_object_on_screen(grass_field_matrix, soldier.SOLDIER_IMG,
+                          #soldier.SOLIDER_WIDTH, soldier.SOLIDER_HEIGHT, screen)
+    #soldier.draw_soldier()
     pygame.display.set_caption("Flag Game")
     pygame.display.flip()
     clock = pygame.time.Clock()
-
-
-
-
+    return screen
 
 
 def night_screen(night_field_matrix):
@@ -25,16 +25,16 @@ def night_screen(night_field_matrix):
     pygame.init()
     night_screen= pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
     night_screen.fill(consts.NIGTH_COLOR)
-    pygame.display.flip()
-    clock = pygame.time.Clock()
     for i in range(1,1000,20):
         pygame.draw.line(night_screen, consts.LINE_COLOR, (i,0), (i,1000), 1)
     for j in range(1,1000,20):
         pygame.draw.line(night_screen, consts.LINE_COLOR, (0, j), (1000,j), 1)
-
     draw_object_on_screen(night_field_matrix, consts.BOMB_IMG,
                               consts.BOMB_WIDTH, consts.BOMB_HEIGHT, night_screen)
-
+    pygame.display.flip()
+    clock = pygame.time.Clock()
+    pygame.quit()
+    return night_screen
 
 def draw_object_on_screen(matrix, img_name, width ,hight, screen ):
     img = pygame.image.load(img_name)
@@ -49,13 +49,11 @@ def draw_object_on_screen(matrix, img_name, width ,hight, screen ):
                 screen.blit(img, (x,y))
 
 
-
-
-def create_flag(flag_img):
+'''def create_flag(flag_img):
     flag = pygame.image.load(flag_img)
     sized_flag = pygame.transform.scale(flag, (
-        consts.FLAG_WIDTH, consts.FLAG_HEIGHT))
-    return sized_flag
+        consts.FLAG_WIDTH, consts.FLAG_HEIGHT))'''
+
 
 def draw_message(message, font_size, color, location):
     font = pygame.font.SysFont(consts.FONT_NAME, font_size)
