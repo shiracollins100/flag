@@ -18,7 +18,7 @@ BOMB_HEIGHT=20
 EMPTY_COLS = "empty"
 GRASS_COLS = "grass"
 BOMB_COLS = "bomb"
-
+FLAG_COL = "flag"
 
 FLAG_IMG = "flag.png"
 FLAG_WIDTH=60
