@@ -1,4 +1,11 @@
-import game_field
+import pygame
+
+
+SOLIDER_IMG="soldier (2).png"
+SOLIDER_WIDTH=120
+SOLIDER_HEIGHT=120
+SOLIDER_START_row=0
+SOLIDER_START_col=0
 
 SOLDIER_IMG="soldier.png"
 SOLDIER_WIDTH=40
@@ -12,13 +19,8 @@ def move_in_direction(soldier_location, direction):
     soldier_location["row"] += direction[0]
     soldier_location["col"] += direction[1]
 
-'''def draw_soldier():
-    import screen
-    pygame.init()
-    img = pygame.image.load(SOLDIER_IMG)
-    img = pygame.transform.scale(img, (SOLDIER_WIDTH, SOLDIER_HEIGHT))
-    screen.screen.blit(img, (SOLDIER_START_col,SOLDIER_START_row))
-    game_field.grass_field_matrix.insert(0,img)'''
+def draw_soldier():
+    pass
 
 def get_soldier_position():
     x, y=0, 0

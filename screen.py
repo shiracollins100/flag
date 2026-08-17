@@ -5,15 +5,13 @@ import game_field
 import main
 import soldier
 
+
 def grass_screen(grass_field_matrix):
     pygame.init()
     screen = pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
     screen.fill(consts.BACKGROUND_COLOR)
     draw_object_on_screen(grass_field_matrix, consts.GRASS_IMG,
                           consts.GRASS_WIDTH, consts.GRASS_HEIGHT, screen)
-    #draw_object_on_screen(grass_field_matrix, soldier.SOLDIER_IMG,
-                          #soldier.SOLIDER_WIDTH, soldier.SOLIDER_HEIGHT, screen)
-    #soldier.draw_soldier()
     pygame.display.set_caption("Flag Game")
     pygame.display.flip()
     clock = pygame.time.Clock()
@@ -36,23 +34,34 @@ def night_screen(night_field_matrix):
     pygame.quit()
     return night_screen
 
-def draw_object_on_screen(matrix, img_name, width ,hight, screen ):
+def draw_object_on_screen(matrix, img_name, width ,height, screen ):
     img = pygame.image.load(img_name)
-    img = pygame.transform.scale(img, (width, hight))
+    img = pygame.transform.scale(img, (width, height))
     for row in matrix:
         for col in row:
-            if col != consts.EMPTY_COLS:
+            if col == consts.FLAG_COL:
+                create_print_flag(matrix, screen)
+
+            elif col != consts.EMPTY_COLS:
                 row_index = matrix.index(row)
                 col_index = row.index(col)
                 x, y = game_field.get_x_y_position(row_index, col_index) # need to be center
-                # draw grass on screen
-                screen.blit(img, (x,y))
+                screen.blit(img, (x, y))
+    soldier_img = soldier.draw_soldier()
+    screen.blit(soldier_img, main.state["soldier_location"])
 
 
-'''def create_flag(flag_img):
-    flag = pygame.image.load(flag_img)
-    sized_flag = pygame.transform.scale(flag, (
-        consts.FLAG_WIDTH, consts.FLAG_HEIGHT))'''
+
+
+
+def create_print_flag(matrix, screen):
+    flag = pygame.image.load(consts.FLAG_IMG)
+    flag = pygame.transform.scale(flag, (
+        consts.FLAG_WIDTH, consts.FLAG_HEIGHT))
+    x = consts.WINDOW_WIDTH - consts.FLAG_WIDTH
+    y = consts.WINDOW_HEIGHT - consts.FLAG_HEIGHT
+    screen.blit(flag, (x, y))
+
 
 
 def draw_message(message, font_size, color, location):
