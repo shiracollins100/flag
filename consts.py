@@ -1,3 +1,4 @@
+import pygame
 WINDOW_WIDTH=1000
 WINDOW_HEIGHT=500
 ROW=25
@@ -6,7 +7,13 @@ COL=50
 COL_START_CENTER = 10
 COL_LENGTH = 20
 
-GRASS_IMG= "grass.png"
+GRASS_IMG="grass.png"
+#"C:\Users\jbt\Downloads\bin\grass.png"
+#"C:\Users\jbt\PycharmProjects\flag\grass.png".convert()
+
+#"C:\Users\jbt\PycharmProjects\flag\grass.png"
+#"C:\\Users\\jbt\\Downloads\\PythonProject\\flag\\grass.png"
+#"C:\Users\jbt\Downloads\grass.png"
 GRASS_WIDTH=20
 GRASS_HEIGHT=60
 
@@ -23,9 +30,9 @@ FLAG_X =1000
 FLAG_Y =500
 FLAG_LOCATION=(FLAG_WIDTH, FLAG_HEIGHT)
 
-NIGTH_COLOR=(28,63,26)
-LINE_COLOR=(111,203,111)
-BACKGROUND_COLOR = (0, 153, 0)
+NIGTH_COLOR=(0,20,3)
+LINE_COLOR=(0,51,25)
+BACKGROUND_COLOR = (0, 102, 0)
 LOSE_MESSAGE = "You Lost!"
 FONT_NAME='david'
 LOSE_FONT_SIZE = int(0.15 * WINDOW_WIDTH)

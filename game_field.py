@@ -1,18 +1,21 @@
+import pygame
 import consts
 from random import randint
 
+
 # the matrix of the game
 def create_matrix():
-    return [[[consts.EMPTY_COLS] for x in range(consts.COL)] for y in range(consts.ROW)]
-
+    return [[consts.GRASS_IMG for x in range(consts.COL)] for y in range(consts.ROW)]
 
 
 # create grass screen
 def create_grass_field_matrix():
-    grass_field_matrix = create_matrix
+    grass_field_matrix = create_matrix()
     for row in range(consts.ROW):
         for col in range(consts.COL):
-            pos = randint(0, 3 )
+            pos = randint(0, 20 )
+            grass_field_matrix.insert(pos, consts.GRASS_IMG)
+            #grass_field_matrix.append([consts.GRASS_IMG for x in range(consts.COL)])
             if pos == 0:
                 grass_field_matrix[row][col] = consts.GRASS_COLS
     return grass_field_matrix
@@ -21,7 +24,7 @@ grass_field_matrix = create_grass_field_matrix()
 
 
 def create_night_field_matrix():
-    night_field_matrix = create_matrix
+    night_field_matrix = create_matrix()
     for row in range(consts.ROW):
         for col in range(consts.COL):
             pos = randint(0,20 )
@@ -36,16 +39,17 @@ def get_x_y_position(row, column):
     y = consts.COL_START_CENTER + row * consts.COL_LENGTH
     return x, y
 
-
-
  # the game loop, when true game is running
-def handle_user_events():
+'''def handle_user_events():
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
     pygame.display.update()
-    clock.tick(60) # updates the changes on screen - moving soldier
+    clock.tick(60) # updates the changes on screen - moving soldier'''
 
 
-
+def is_valid_position():
+    pass
+def get_cell():
+    pass
