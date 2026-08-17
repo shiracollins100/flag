@@ -8,12 +8,7 @@ COL_START_CENTER = 10
 COL_LENGTH = 20
 
 GRASS_IMG="grass.png"
-#"C:\Users\jbt\Downloads\bin\grass.png"
-#"C:\Users\jbt\PycharmProjects\flag\grass.png".convert()
 
-#"C:\Users\jbt\PycharmProjects\flag\grass.png"
-#"C:\\Users\\jbt\\Downloads\\PythonProject\\flag\\grass.png"
-#"C:\Users\jbt\Downloads\grass.png"
 GRASS_WIDTH=20
 GRASS_HEIGHT=60
 

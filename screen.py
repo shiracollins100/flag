@@ -48,33 +48,6 @@ def night_screen():
         clock.tick(60)  # updates the c
     return night_screen
 
-def draw_object_on_screen():
-
-
-
-'''def draw_grass():
-    grass = pygame.image.load(consts.GRASS_IMG).convert_alpha()
-    sized_grass = pygame.transform.scale(grass, (consts.GRASS_WIDTH, consts.GRASS_HEIGHT))
-    running = True
-    while running:
-        # display images at different positions
-        grass_screen.blit(sized_grass, (50, 50))
-        # update display
-        pygame.display.flip()
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False'''
-
-
-# Create a box to put the arrow in, so that the rotation will be around
-# it's bottom (the box's center)
-'''grass_box = pygame.Surface(
-            (consts.GRASS_WIDTH, consts.GRASS_HEIGHT * 2), )
-    grass_box.fill(consts.BACKGROUND_COLOR)
-    grass_box.blit(sized_grass, (0, 0))
-
-    return grass_box'''
-
 def create_flag(flag_img):
     flag = pygame.image.load(flag_img)
     sized_flag = pygame.transform.scale(flag, (
