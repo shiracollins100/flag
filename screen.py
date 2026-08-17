@@ -48,10 +48,8 @@ def draw_object_on_screen(matrix, img_name, width ,height, screen ):
                 x, y = game_field.get_x_y_position(row_index, col_index) # need to be center
                 screen.blit(img, (x, y))
     soldier_img = soldier.draw_soldier()
+
     screen.blit(soldier_img, main.state["soldier_location"])
-
-
-
 
 
 def create_print_flag(matrix, screen):
@@ -62,6 +60,11 @@ def create_print_flag(matrix, screen):
     y = consts.WINDOW_HEIGHT - consts.FLAG_HEIGHT
     screen.blit(flag, (x, y))
 
+def change_to_night(screen):
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_RETURN]:
+        night_field_matrix = game_field.create_night_field_matrix()
+        screen.night_screen(night_field_matrix)
 
 
 def draw_message(message, font_size, color, location):
