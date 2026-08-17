@@ -7,11 +7,15 @@ SOLDIER_LOCATION={"row" : SOLIDER_START_row,"col" : SOLIDER_START_col}
 
 
 def move_in_direction(soldier_location, direction):
-    soldier_location["center_x"] += direction[0]
-    soldier_location["center_y"] += direction[1]
+    soldier_location["row"] += direction[0]
+    soldier_location["col"] += direction[1]
 
 def draw_soldier():
     pass
 
+def get_soldier_position():
+    pass
 
+def change_soldier_position():
+    pass
 
